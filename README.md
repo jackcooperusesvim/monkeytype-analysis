@@ -30,25 +30,25 @@ This data is very rich and has a lot of useful information. The following are a 
 
 * _id: Unique Test Identifier (integer stored as object)
 * isPb: Is a Personal Best (boolean stored as an object [True or NaN])
-* wpm: Words Per Minute of the test (float rounded to the 0.01)
+* wpm: Words Per Minute of the test not counting erronous typing (float rounded to the 0.01)
 * rawWpm: Words Per Minute speed of each individual word that was typed (array of floats rounded to the 0.01)
 * consistency: A MonkeyType measurement of how consistent your typing speed is. I do not know how this is calculated. (float64)
 * charStats: A string which describes performance on each word in the form of  wpm;incorrectletters;extraletters;missed. Here the variables of extraletters and missed letters refer to letters either typed after typing the length of the word, or letters missed by typing space too early.
 * mode and mode2: The type of mode of the test. time indicates a time limit, the length of which is described in mode2, and word indicates a word count to be reached, which is also described in mode2. Quote is a version of word which is usually a pop culture quote, and zen has no time limit or word count, and you can type whatever you want. (object)
-* quoteLength: I do not know what this is. I assume it has something to do with the "quote" mode on MonkeyType, but even so, I only have 2 unique values of 1 and -1, so I don't plan on using it.
-* restartCount: I assume that this is how many restarts were used to take this test.
-* testDuration:
-* afkDuration:
-* incompleteTestSeconds:
-* punctuation:
-* numbers:
-* language:
-* funbox:
-* difficulty:
-* lazyMode:
-* blindMode:
-* bailedOut:
-* tags:
-* timestamp:
+* quoteLength: I do not know what this is. I assume it has something to do with the "quote" mode on MonkeyType, but even so, I don't use that mode and I only have 2 unique values of 1 and -1, so I don't plan on using it.
+* restartCount: This is how many restarts were used to take this test (int)
+* testDuration: represents the length in time of the test (float)
+* afkDuration: represents how long during a test the user was predicted to be AFK (Away From Keyboard) (float)
+* incompleteTestSeconds: Some variation of afkDuration which I don't quite understand.
+* punctuation: Was puncuation available on the test? (Boolean)
+* numbers: Were numbers available on the test? (Boolean)
+* language: Language typed in as a string (string)
+* funbox: Related to some other mode??? (none)
+* difficulty: Level of word difficulty typed on the test (string: {"normal"})
+* lazyMode: Is Lazy Mode enabled for this test? (boolean)
+* blindMode: Is blind Mode enabled for this test? (boolean)
+* bailedOut: Did you bail out of the test? (boolean)
+* tags: IDK, its always (NaN)
+* timestamp: some long number. Maybe units? (int)
 
 ### Answering the Questions
