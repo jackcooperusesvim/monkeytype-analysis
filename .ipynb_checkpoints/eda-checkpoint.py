@@ -8,7 +8,6 @@ def import_filt(plot = False):
     data = pd.read_csv(config.CSV_INPUT_FILEPATH())
     return filt(data,plot)
 
-
 def filt(data, plot = False):
     # Remove everything with afk time
     #Make the charStats managable
@@ -26,8 +25,6 @@ def filt(data, plot = False):
         # ax2.scatter(data.timestamp[::-1], data.wpm[::-1])
         # ax2.set_label("wpm by time")
         plt.show()
-
-    print(data.afkDuration.describe())
 
 
     # this section filters out the Colemak days and non-representative datapoints and outliers
