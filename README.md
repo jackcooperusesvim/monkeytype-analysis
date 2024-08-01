@@ -1,28 +1,19 @@
-# CATCHY TITLE - A Data-Driven Analysis of Typing Speed
+# Slow is smooth, smooth is fast - A data driven mini-study of typing speed with MonkeyType
 
+## Introduction
 
-### The TL;DR - Improve Typing Speed
+When I started taking programming seriously (~ 3 years ago), I was not a great programmer. Forget that, I wasn't even a good typist. I remember once it took me a full 10 minutes to find my backslash key to type "/n". In 2022 I decided that this had to change. I started doing typing practice and typing tests. Over the course of a year I improved from 40 words per minute while staring at the keyboard to 75 words per minute, typed with my head looking at the computer screen in front of me. But that was it. I had hit a limit, and no matter how much harder I tried, I felt I couldn't consistently pass that limit.
 
-The goal of this project was to gather, clean, and analyze information to bring direction to my practice so I can find an effective and efficient method to improve my speed. The following are the specific questions regarding data-approachable aspects of typing practice which I sought to answer at the beginning of the project, as well as a quick summary of their respective data-driven answers.
+That is, until 8 months ago when I watched some youtube videos which reccomended that I type slower and focus on accuracy. I thought this was interesting because it drew a parallel to another area of my life: the guitar.
 
-#### Q1: Is it better for improvement to type faster and correct mistakes, or to type slower and ensure proper keystrokes?
-##### A1: TODO
+When you have to learn a particularly hard or fast lick on the guitar, the general consensus is that the best way to practice it after you get the pattern in your head, is to play the lick slowly and __perfectly__. The reasoning behind this is that playing it perfectly and consistently engrains a much more *exact* pattern into your muscle memory than faster, more uncontrolled practice. This results in far better playing in the long run. My theory was that typing, being a similar patterned movement of the fingers, is probably similar.
 
-#### Q2: Does learning an alternate layout make you progress faster or slower?
-##### A2: TODO
+I decided to start practicing more intentionally, and start focusing more on accuracy, and over the course of those 8 months I have improved massively going from an average of ~75 words per minute to my current average of 96 words per minute (and climbing). 
 
-#### Q3: How fast can I expect to improve over the next month and year
-##### A3: TODO
+Recently, I discovered that MonkeyType, one of the websites that I use to test and practice typing, has a feature which allows you to download data from all typing tests on your account. Being a Data Analyst, I was intrigued and decided to do a little digging to see exactly how the idea of "slow is smooth, smooth is fast" applied to typing. Should I be going for maximum accuracy or is there some level of acceptable error? If I decide mid-way through a test to abandon it and try another test, does that mean make my reported wpm unreasonably high?
 
-#### Q4: Is any sort of mental fatigue affecting my typing speed?
-##### A4: TODO
+## Analysis
 
-#### Q5: How much does the time typing recently affect my typing speed? Is there a "warming up" period?
-##### A5: TODO
-
-### Gathering the Data
-
-This data comes from MonkeyType.com, where I have practicing typing for over a year. Unfortunately, not all of the data in that year is available, since I did not create an account until December of ____, but thankfully there remains enough data gathered since then that I have plenty of records. The actual sourcing of the data can be done by downloading a .csv from the profile section. In a future iteration, I would like to scrape the individual test data, but that is beyond my current scope, and involves some heavy javascript-ing which I am not totally up for.
 
 ### Understanding the Data
 

@@ -18,7 +18,6 @@ def filt(data, plot = False):
     data["extra"] = data.charStats.apply(extract_extra_letters)
     data["incorrect"] = data.charStats.apply(extract_incorrect)
     data["ind"] = pd.Series(data.index)
-    data["rawWpm"] = data["wpm"]/data["rawWpm"]
 
     if plot:
         sns.relplot(data = data, x = "ind", y = "wpm").set(title="Before")
