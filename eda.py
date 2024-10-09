@@ -1,4 +1,5 @@
 import config 
+import duckdb 
 import pandas as pd
 import seaborn as sns
 
@@ -9,7 +10,6 @@ def import_filt(plot = False):
 def filt(data, plot = False):
 
     # Extract charStats
-
     data["correct"] = data.charStats.apply(extract_correct)
     data["missed"] = data.charStats.apply(extract_missed)
     data["extra"] = data.charStats.apply(extract_extra_letters)
@@ -19,8 +19,12 @@ def filt(data, plot = False):
     if plot:
         sns.relplot(data = data, x = "Index", y = "wpm").set(title="Before")
 
-    # Declare Filters
+    data = duckdb.sql('''SELECT *, total = correct+missed+incorrect, 
+            wpm_ratio_raw = rawWpm/wpm, 
 
+            FROM data;''').df()
+
+    # Declare Filters
     m,b = line_from_points2d(200,50,300,80)
 
     colemak_filter = (
@@ -75,6 +79,7 @@ def filt(data, plot = False):
     # Rejoin Data
 
     out_data = pd.concat([old_data,colemak_data,new_data,col_qwert_data], axis = 0) 
+    print(out_data.columns)
 
     if plot:
         sns.relplot(out_data,y="wpm",x="Index",hue='dataGroup').set(title="After Grouping")
