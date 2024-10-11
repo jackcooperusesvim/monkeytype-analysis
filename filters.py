@@ -1,13 +1,14 @@
 import config 
 import polars as pl
 
-def import_filt(*dataGroups):
+def import_filt(*dataGroups: str):
     data = pl.read_csv(config.CSV_INPUT_FILEPATH(),infer_schema_length=int(1e10))
+    dg = list(dataGroups)
 
     if len(dataGroups) == 0: 
-        dataGroups = ['new']
+        dg = ['new']
 
-    x = filt(data,dataGroups)
+    x = filt(data,dg)
     print(x.columns)
     return x
 
@@ -84,8 +85,11 @@ def graph_ops(data: pl.DataFrame, select:bool=False) -> pl.DataFrame:
             ),
         )
 
+
 def line_from_points2d(x1,y1,x2,y2):
-    '''Returns the m and b required according to y=mx+b to fit the given points'''
+    '''Returns the m and b required according to the standard 
+    equation of a line (y=mx+b) to fit the given points'''
+
     dx = x2-x1
     dy = y2-y1
 
@@ -97,4 +101,4 @@ def line_from_points2d(x1,y1,x2,y2):
 
 if __name__ == "__main__":
     dataGroupOptions= ['new','old','colemak','qwert_col']
-    data = import_filt(dataGroupOptions)
+    data = import_filt(*dataGroupOptions)
