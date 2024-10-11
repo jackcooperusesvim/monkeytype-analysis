@@ -1,12 +1,10 @@
 import config 
-from icecream import ic
 import polars as pl
-import seaborn as sns
 
 def import_filt(*dataGroups):
     data = pl.read_csv(config.CSV_INPUT_FILEPATH(),infer_schema_length=int(1e10))
 
-    if len(dataGroups)==0: 
+    if len(dataGroups) == 0: 
         dataGroups = ['new']
 
     x = filt(data,dataGroups)
@@ -58,6 +56,7 @@ def filt(data: pl.DataFrame, dataGroups: list[str] = ['new']):
         pl.col("dataGroup").is_in(dataGroups),
         pl.col('wpm') is not pl.Null,
     )
+
 def graph_ops(data: pl.DataFrame, select:bool=False) -> pl.DataFrame:
     if select:
         return data.select(
@@ -85,7 +84,6 @@ def graph_ops(data: pl.DataFrame, select:bool=False) -> pl.DataFrame:
             ),
         )
 
-
 def line_from_points2d(x1,y1,x2,y2):
     '''Returns the m and b required according to y=mx+b to fit the given points'''
     dx = x2-x1
@@ -97,18 +95,6 @@ def line_from_points2d(x1,y1,x2,y2):
 
     return m,b
 
-def extract_correct(string):
-    return int(string.split(';')[0])
-
-def extract_incorrect(string):
-    return int(string.split(';')[1])
-
-def extract_extra(string):
-    return int(string.split(';')[2])
-
-def extract_missed(string):
-    return int(string.split(';')[3])
-
-
 if __name__ == "__main__":
-    data = import_filt(plot = True)
+    dataGroupOptions= ['new','old','colemak','qwert_col']
+    data = import_filt(dataGroupOptions)
