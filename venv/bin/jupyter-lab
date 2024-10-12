@@ -1,4 +1,4 @@
-#!/Users/de/MonkeyType-Analysis/venv/bin/python3.12
+#!/Users/de/gh/monkeytype-analysis/venv/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys
